@@ -1,0 +1,98 @@
+main {
+    display: flex;
+    background-color: rgb(206, 206, 206);
+}
+
+.login-screen {
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 45vw;
+    box-shadow: 1px 0px 1px rgb(116, 115, 115);
+}
+
+.image {
+    height: 100vh;
+    width: 55vw;
+
+    background-image: url('../img/login_image.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+.login-title {
+    font-family: sans-serif;
+    font-size: 80px;
+}
+
+.login-title-undertext {
+    font-size: 30px;
+}
+
+.login-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.login-text {
+    font-size: 20px;
+    width: 70%;
+    margin: 6px 0px;
+}
+
+.login-input {
+    width: 70%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    background-color: rgb(209, 209, 209);
+}
+
+.login-button {
+    font-family: sans-serif;
+    color: white;
+    background-color: rgb(0, 174, 255);
+    border: 1px rgb(0, 0, 0, 0.2) solid;
+    border-radius: 5px;
+    font-size: 25px;
+    width: 50%;
+    height: 80px;
+}
+
+.login-button:hover {
+    background-color: rgb(0, 146, 214);
+    transition: 0.1s;
+}
+
+.login-recover-password {
+    float: right;
+    color: rgb(87, 87, 87);
+    cursor: pointer;
+}
+
+.login-recover-password:hover {
+    color: rgb(49, 49, 49);
+    transition: 0.1s;
+}
+
+.login-header {
+    margin: 30% 0px 50px 60px;
+}
+
+.login-register {
+    color: rgb(87, 87, 87);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login-register:hover {
+    color: rgb(49, 49, 49);
+    transition: 0.1s;
+}
+
+
+.login-button {
+    margin-top: 50px;
+    cursor: pointer;
+}
