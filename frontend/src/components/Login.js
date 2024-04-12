@@ -13,9 +13,9 @@ function Login() {
                         </div>
                         <form className='login-form'>
                             <div className='login-text'>username:</div>
-                            <input className='login-input'/>
+                            <input type='text' className='login-input'/>
                             <div className='login-text'>password: <a className='login-recover-password'>Forgot password?</a></div>
-                            <input className='login-input'/>
+                            <input type='password' className='login-input'/>
                             <div className='login-text'>Don't Have an account? <a className='login-register'>Create one</a></div>
                             <button className='login-button'>LOG IN</button>
                         </form>
