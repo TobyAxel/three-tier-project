@@ -60,15 +60,15 @@ app.post('/login', async (req, res) => {
 // Register
 app.post('/register', async (req, res) => {
     console.log("Received register request");
-    const { username, password, email } = req.body || {};
+    const { username, password } = req.body || {};
 
-    // Check if username, password and email were given
-    if (!username || !password || !email) {
+    // Check if username and password were given
+    if (!username || !password) {
         console.log("Registering failed, request was missing information")
-        res.status(401).send("Username, password and email required");
+        res.status(401).send("Username and password required");
     } else {
         // Attempt to add user to database
-        const response = await userRegister(username, password, email);
+        const response = await userRegister(username, password);
         res.status(response.status).send(response.message);
     }
 });
@@ -79,6 +79,6 @@ app.listen(3001, () => {
 });
 
 // // Get very sensitive and important data
-// app.get('/getdata', verifyToken, async (req, res) => {
-//     res.status(200).send("Here is your very sensitive and important data");
-// });
+app.get('/getdata', verifyToken, async (req, res) => {
+    res.status(200).send("Here is your very sensitive and important data");
+});

@@ -37,18 +37,18 @@ async function userLogin(username, password) {
 }
 
 // Register
-async function userRegister(username, password, email) {
+async function userRegister(username, password) {
     try {
         // See if user already exists
         const existingUser = await db.query(`
-            SELECT username, email FROM public.users
-            WHERE username = $1 OR email = $2
-        `, [username, email]);
+            SELECT username FROM public.users
+            WHERE username = $1
+        `, [username]);
 
         // If a user was found
         if (existingUser.rows.length > 0) {
             console.log("Registering failed, user already exists")
-            return { status: 401, message: "Username or email already in use" };
+            return { status: 401, message: "Username already in use" };
         }
 
         // Hash password
@@ -56,9 +56,9 @@ async function userRegister(username, password, email) {
 
         // Try to insert given data to table
         await db.query(`
-            INSERT INTO public.users (username, password, email)
-            VALUES ($1, $2, $3)
-        `, [username, hashedPassword, email]);
+            INSERT INTO public.users (username, password)
+            VALUES ($1, $2)
+        `, [username, hashedPassword]);
 
         console.log("Registering successful");
         return { status: 201, message: "Registering successful!" };
